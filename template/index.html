@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+	<title>Add Employee</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+	{% if messages %}
+		{% for message in messages %}
+    		<h2 style="color: green;">{{ message }}</h2>
+    	{% endfor %}
+	{% endif %}
+	<h1>Employee Registration</h1>
+	<div class="container">
+	<form method="post">
+		{% csrf_token %}
+		Enter Name: <input type="text" name="nm" class="form-control"><br>
+		Enter Age: <input type="number" name="age" class="form-control"><br>
+		Enter Address: <input type="text" name="addr" class="form-control"><br>
+		Select City: 
+		<select name="city" class="form-control">
+			<option>Indore</option>
+			<option>Bhopal</option>
+		</select>
+		<br>
+		<input type="submit" value="Add">
+	</form>
+</div>
+</body>
+</html>

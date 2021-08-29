@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>department</title>
+</head>
+<body>
+	<div class="container">
+	{% if messages %}
+		{% for message in messages %}
+    		<h2 style="color: green;">{{ message }}</h2>
+    	{% endfor %}
+	{% endif %}
+	<h1>Add Department</h1>
+	<form method="post">
+		{% csrf_token %}
+		{{data.as_p}}
+		<input type="submit" name="Add">
+	</form>
+	</div>
+
+</body>
+</html>
